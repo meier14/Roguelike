@@ -222,7 +222,7 @@ def unloadmap():
 	objects.remove(player)
 	objects.remove(stairs)
 	objects.remove(upstairs)
-	print '\n Unloading\n'
+	print('\n Unloading\n')
 	for object in objects:
 			#print object.name
 			if object.fighter:
@@ -264,7 +264,7 @@ def loadmap(newmapname):
 				if object.fighter:
 					if object.fighter.ai is BasicMonster:
 						object.fighter.ai.pathtoplayer = False
-			print '\n Loading \n'
+			print('\n Loading \n')
 			"""for object in objects:
 				print object.name"""
 			stairs.x = file['stairx']
@@ -327,7 +327,7 @@ def prevlevel():
 	try:
 		loadmap(mapname + str(dungeonlevel))
 	except:
-		print 'Ha Ha Ha no'
+		print('Ha Ha Ha no')
 	#loadmap(mapname + str(dungeonlevel))
 	player.x = stairs.x
 	player.y = stairs.y
@@ -902,7 +902,7 @@ def handle_keys():
 				return 'castedspell'
 			if keychar == 'o':
 				for obj in objects:
-					print obj.name + ' ' + str(obj.x) + ' ' + str(obj.y)
+					print(obj.name + ' ' + str(obj.x) + ' ' + str(obj.y))
 				return 'didnttaketurn'
 			if keychar == '<':
 				#if stairs.x == player.x and stairs.y == player.y:
@@ -911,13 +911,13 @@ def handle_keys():
 				#if upstairs.x == player.x and upstairs.y == player.y:
 				prevlevel()
 			if keychar == 'c':
-				print str(gameid) + ' ' + mapname + ' ' + str(dungeonlevel)
+				print(str(gameid) + ' ' + mapname + ' ' + str(dungeonlevel))
 			if keychar == 'p':
 				for object in objects:
 					if object.fighter and object.fighter.ai and object.fighter.ai.pathtoplayer:
-						print 'yes'
+						print('yes')
 					elif object.fighter and object.fighter.ai and not object.fighter.ai.pathtoplayer:
-						print 'problem'
+						print('problem')
 			return 'didnttaketurn'
 
 def playermoveorattack(dx,dy):

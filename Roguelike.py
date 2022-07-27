@@ -574,7 +574,7 @@ def handle_keys():
 				return 'castedspell'
 			if keychar == 'o':
 				for obj in objects:
-					print obj.name + ' ' + str(obj.x) + ' ' + str(obj.y)
+					print(obj.name + ' ' + str(obj.x) + ' ' + str(obj.y))
 				return 'didnttaketurn'
 			return 'didnttaketurn'
 
